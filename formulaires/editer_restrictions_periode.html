@@ -1,0 +1,38 @@
+<div class='formulaire_spip formulaire_editer formulaire_#FORM formulaire_#FORM-#ENV{id_restrictions_periode,nouveau}'>
+	[<p class="reponse_formulaire reponse_formulaire_ok">(#ENV**{message_ok})</p>]
+	[<p class="reponse_formulaire reponse_formulaire_erreur">(#ENV*{message_erreur})</p>]
+
+	[(#ENV{editable})
+	<form method="post" action="#ENV{action}"><div>
+		#ACTION_FORMULAIRE{#ENV{action}}
+		<input type="hidden" name="id_restrictions_periode" value="#ENV{id_restrictions_periode}" />
+		<div class="editer-groupe">
+
+			[(#SAISIE{input, titre, obligatoire=oui,
+				label=<:restrictions_periode:champ_titre_label:>})]
+
+			[(#SAISIE{textarea, descriptif,
+				label=<:restrictions_periode:champ_descriptif_label:>})]
+
+			[(#SAISIE{periodes, id_periode,
+				label=<:restrictions_periode:champ_id_periode_label:>})]
+
+			[(#SAISIE{selection, type, obligatoire=oui,
+				label=<:restrictions_periode:champ_type_label:>})]
+
+			[(#SAISIE{input, duree,
+				label=<:restrictions_periode:champ_duree_label:>})]
+
+			[(#SAISIE{input, jour_debut,
+				label=<:restrictions_periode:champ_jour_debut_label:>})]
+
+			[(#SAISIE{input, jour_fin,
+				label=<:restrictions_periode:champ_jour_fin_label:>})]
+
+		</div>
+		[(#REM) ajouter les saisies supplementaires : extra et autre, a cet endroit ]
+		<!--extra-->
+		<p class="boutons"><input type="submit" class="submit" value="<:bouton_enregistrer:>" /></p>
+	</div></form>
+	]
+</div>
