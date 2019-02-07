@@ -8,6 +8,7 @@ if (!defined('_ECRIRE_INC_VERSION')) {
 $GLOBALS[$GLOBALS['idx_lang']] = array(
 
 	// C
+	'champ_duree_label' => ' Durée',
 	'champ_duree_minimale_label' => 'Durée minimale :',
 	'champ_jour_debut_label' => 'Jour début :',
 	'champ_jour_fin_label' => 'Jour fin :',

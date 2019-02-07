@@ -16,6 +16,13 @@ function restrictions_periodes_dist($flux) {
 		'nom' => _T('periodes:periodes_titre'),
 		'saisies' => [
 			[
+				'saisie' => 'periodes',
+				'options' => [
+					'nom' => 'periode',
+					'label' => _T('periode:titre_periode'),
+				]
+			],
+			[
 				'saisie' => 'selection',
 				'options' => [
 					'nom' => 'type_periode',
@@ -28,6 +35,15 @@ function restrictions_periodes_dist($flux) {
 				]
 			],
 			[
+				'saisie' => 'input',
+				'options' => [
+					'nom' => 'duree',
+					'label' => _T('objets_restrictions_periodes:champ_duree_label'),
+
+					'afficher_si' => '@type_periode@=="duree"'
+				]
+			],
+			[
 				'saisie' => 'oui_non',
 				'options' => [
 					'nom' => 'duree_minimale',
@@ -36,15 +52,6 @@ function restrictions_periodes_dist($flux) {
 					'afficher_si' => '@type_periode@=="duree"'
 				]
 			],
-			/*[
-				'saisie' => 'input',
-				'options' => [
-					'nom' => 'type_duree',
-					'label' => _T('objets_restrictions_periodes:champ_type_duree_label'),
-
-					'afficher_si' => '@type_periode@=="duree"'
-				]
-			],*/
 			[
 				'saisie' => 'selection',
 				'options' => [
