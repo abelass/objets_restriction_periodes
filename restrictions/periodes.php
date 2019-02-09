@@ -28,8 +28,8 @@ function restrictions_periodes_dist($flux) {
 			[
 				'saisie' => 'selection',
 				'options' => [
-					'nom' => 'type_periode',
-					'label' => _T('objets_restrictions_periodes:champ_type_periode_label'),
+					'nom' => 'type',
+					'label' => _T('objets_restrictions_periodes:champ_type_label'),
 					'data' => [
 						'duree' => _T('objets_restrictions_periodes:choix_duree'),
 						'jours' => _T('objets_restrictions_periodes:choix_jours')
@@ -43,7 +43,7 @@ function restrictions_periodes_dist($flux) {
 					'nom' => 'duree',
 					'label' => _T('objets_restrictions_periodes:champ_duree_label'),
 
-					'afficher_si' => '@type_periode@=="duree"'
+					'afficher_si' => '@type@=="duree"'
 				]
 			],
 			[
@@ -52,7 +52,7 @@ function restrictions_periodes_dist($flux) {
 					'nom' => 'duree_minimale',
 					'label' => _T('objets_restrictions_periodes:champ_duree_minimale_label'),
 					'defaut' => 'on',
-					'afficher_si' => '@type_periode@=="duree"'
+					'afficher_si' => '@type@=="duree"'
 				]
 			],
 			[
@@ -61,7 +61,7 @@ function restrictions_periodes_dist($flux) {
 					'nom' => 'jour_debut',
 					'label' => _T('objets_restrictions_periodes:champ_jour_debut_label'),
 					'data' => $jours_semaines,
-					'afficher_si' => '@type_periode@=="jours"'
+					'afficher_si' => '@type@=="jours"'
 				]
 			],
 			[
@@ -70,7 +70,7 @@ function restrictions_periodes_dist($flux) {
 					'nom' => 'jour_fin',
 					'label' => _T('objets_restrictions_periodes:champ_jour_fin_label'),
 					'data' => $jours_semaines,
-					'afficher_si' => '@type_periode@=="jours"'
+					'afficher_si' => '@type@=="jours"'
 				]
 			],
 		]

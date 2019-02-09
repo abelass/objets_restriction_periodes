@@ -12,7 +12,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'champ_duree_minimale_label' => 'Durée minimale :',
 	'champ_jour_debut_label' => 'Jour début :',
 	'champ_jour_fin_label' => 'Jour fin :',
-	'champ_type_periode_label' => 'Type de période :',
+	'champ_type_label' => 'Type :',
 	'choix_duree' => 'Durée',
 	'choix_jours' => 'Jours',
 
