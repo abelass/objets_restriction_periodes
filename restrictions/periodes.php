@@ -14,12 +14,15 @@ function restrictions_periodes_dist($flux) {
 
 	$return = [
 		'nom' => _T('periodes:periodes_titre'),
+		'verifier' => [
+			'champs' => ['date_debut', 'date_fin'],
+		],
 		'saisies' => [
 			[
 				'saisie' => 'periodes',
 				'options' => [
 					'nom' => 'periode',
-					'label' => _T('periode:titre_periode'),
+					'label' => _T('periode:champ_periode_label'),
 				]
 			],
 			[
