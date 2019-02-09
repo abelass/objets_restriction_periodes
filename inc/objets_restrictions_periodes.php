@@ -23,6 +23,7 @@
  */
 function periodes_verifier_date($champ, $valeur, $options) {
 	include_spip('filtres/dates_outils');
+	include_spip('public/assembler');
 	// Si une période a été définie inc charge ses données
 	$valeurs_restriction = $options['valeurs_restriction'];
 	$id_periode = isset($valeurs_restriction['periode']) ?
