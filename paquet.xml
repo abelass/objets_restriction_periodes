@@ -11,11 +11,12 @@
 	<nom>Objets restrictions périodes</nom>
 	<!-- Extension périodes pour le plugin plugin locations_objets_restrictions -->
 
-	<auteur>Rainer</auteur>
+	<auteur>Rainer Müller</auteur>
 
 	<licence>GNU/GPL v3</licence>
 
 	<necessite nom="saisies" compatibilite="[2.28.0;]" /> 
 	<necessite nom="periodes" compatibilite="[1.1.1;]" /> 
 	<necessite nom="locations_objets_restrictions" compatibilite="[1.0.0;]" /> 
+	<necessite nom="dates_outils" compatibilite="[1.0.7;]" />
 </paquet>
