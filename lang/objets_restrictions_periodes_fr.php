@@ -16,6 +16,10 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'choix_duree' => 'Durée',
 	'choix_jours' => 'Jours',
 
+	// E
+	'erreur_duree' => 'Durée minimale : @duree" !',
+	'erreur_jours' => 'la @date" doit être un @jour@ !',
+
 	// O
 	'objets_restrictions_periodes_titre' => 'Objets restrictions périodes',
 
