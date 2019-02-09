@@ -4,7 +4,7 @@
  *
  * @plugin     Objets restrictions périodes
  * @copyright  2019
- * @author     Rainer
+ * @author     Rainer Müller
  * @licence    GNU/GPL v3
  * @package    SPIP\Objets_restrictions_periodes\Fonctions
  */
