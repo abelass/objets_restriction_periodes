@@ -22,6 +22,7 @@
  *   Retourne une chaine vide si c'est valide, sinon une chaine expliquant l'erreur.
  */
 function periodes_verifier_date($champ, $valeur, $options) {
+	include_spip('filtres/dates_outils');
 	// Si une période a été définie inc charge ses données
 	$valeurs_restriction = $options['valeurs_restriction'];
 	$id_periode = isset($valeurs_restriction['periode']) ?
@@ -32,14 +33,15 @@ function periodes_verifier_date($champ, $valeur, $options) {
 	$ok = FALSE;
 	if ($id_periode) {
 		$verifier_periode = charger_fonction('periode_verifier', 'inc');
+
 		// Si la période ne correspond pas, on s'arrête là.
-		if (!verifier_periode($id_periode, $contexte)) {
+		if (!$verifier_periode($id_periode, $contexte)) {
 			return $ok;
 		}
 		else {
 			$periode = sql_fetsel('*', 'spip_periodes', "id_periode=$id_periode");
-			$titre_periode = $periode['titre'];
-			$erreur_periode = "$titre_periode \n";
+			$titre_periode = extraire_multi($periode['titre']);
+			$erreur_periode = _T('periode:champ_periode_label') . " $titre_periode <br>\n";
 		}
 	}
 
@@ -47,9 +49,11 @@ function periodes_verifier_date($champ, $valeur, $options) {
 
 	switch ($type) {
 		case 'duree':
-			$intervalle = dates_intervalle($contexte['date_debut'], $contexte['date_fin'], 0, -1);
+
+			$difference = dates_difference($contexte['date_debut'], $contexte['date_fin'], 'jour');
 			$duree = $valeurs_restriction['duree'];
-			if ($intervalle < $duree) {
+
+			if ($difference < $duree) {
 				$erreur = $erreur_periode . _T('objets_restrictions_periodes:erreur_duree', ['duree' => $duree]);
 
 				return $erreur;
@@ -57,18 +61,20 @@ function periodes_verifier_date($champ, $valeur, $options) {
 			break;
 
 		case 'jours':
-			$intervalle = dates_intervalle($contexte['date_debut'], $contexte['date_fin'], 0, -1);
+			$jour_restriction = $valeurs_restriction['jour_debut'];
+			if ($champ == 'date_fin') {
+				$jour_restriction = $valeurs_restriction['jour_fin'];
+			}
 
-			$jour_restriction = $valeurs_restriction[$champ];
 			$jour_contexte = date('N', strtotime($contexte[$champ]));
 
-			if (!empty($jour_restriction) AND ($jour_restriction] != $jour_contexte) {
+			if (!empty($jour_restriction) AND ($jour_restriction != $jour_contexte)) {
 				$jour = _T('spip:date_jour_' . $jour_restriction);
 				$erreur = $erreur_periode . _T(
 					'objets_restrictions_periodes:erreur_jours',
 					[
+						'date' => _T('dates_outils:info_' . $champ),
 						'jour' => $jour,
-						'date' => _T('info_' . $champ),
 					]);
 
 				return $erreur;
