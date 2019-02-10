@@ -2,7 +2,7 @@
 	prefix="objets_restrictions_periodes"
 	categorie="divers"
 	version="1.0.0"
-	etat="dev"
+	etat="test"
 	compatibilite="[3.0.0;3.2.*]"
 	logo="prive/themes/spip/images/objets_restrictions_periodes-64.png"
 	documentation="https://github.com/abelass/objets_restrictions_periodes"
@@ -15,8 +15,8 @@
 
 	<licence>GNU/GPL v3</licence>
 
-	<necessite nom="saisies" compatibilite="[2.28.0;]" /> 
-	<necessite nom="periodes" compatibilite="[1.1.1;]" /> 
-	<necessite nom="locations_objets_restrictions" compatibilite="[1.0.0;]" /> 
+	<necessite nom="saisies" compatibilite="[2.28.0;]" />
+	<necessite nom="periodes" compatibilite="[1.1.1;]" />
+	<necessite nom="locations_objets_restrictions" compatibilite="[1.0.0;]" />
 	<necessite nom="dates_outils" compatibilite="[1.0.9;]" />
 </paquet>
