@@ -7,7 +7,7 @@
  * @licence    GNU/GPL v3
  * @package    SPIP\Objets_restrictions_periodes\Verifier
  */
- 
+
 /**
  * Teste si la date_debut est conforme aux restrictions imposés par la période.
  *
