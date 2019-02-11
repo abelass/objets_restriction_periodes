@@ -6,9 +6,13 @@ if (!defined("_ECRIRE_INC_VERSION"))
 function restrictions_periodes_dist($flux) {
 	// Les jours de la semaine
 	$jours_semaines = array();
-	for ($i = 0; $i < 7; $i++) {
+	for ($i = 1; $i < 8; $i++) {
 		$jour = $i + 1;
-		$jours_semaines[] = _T('spip:date_jour_' . $jour);
+		if ($i == 7) {
+			$jour = 1;
+		}
+
+		$jours_semaines[$i] = _T('spip:date_jour_' . $jour);
 	}
 
 

@@ -1,1 +1,6 @@
-[(#VAL{spip:date_jour_#VALEUR}|_T)]
+#SET{jour, #VALEUR|plus{1}}
+[(#VALEUR|=={7}|oui)
+	#SET{jour, 1}
+]
+
+[(#VAL{spip:date_jour_#GET{jour}}|_T)]

@@ -7,7 +7,7 @@
  * @licence    GNU/GPL v3
  * @package    SPIP\Objets_restrictions_periodes\Verifier
  */
- 
+
 
 /**
  * Teste si la date est conforme aux restrictions imposés par la période.
@@ -70,6 +70,13 @@ function periodes_verifier_date($champ, $valeur, $options) {
 			$jour_contexte = date('N', strtotime($contexte[$champ]));
 
 			if (!empty($jour_restriction) AND ($jour_restriction != $jour_contexte)) {
+				if ($jour_restriction < 7) {
+					$jour_restriction = $jour_restriction + 1;
+				}
+				else {
+					$jour_restriction = 1 ;
+				}
+
 				$jour = _T('spip:date_jour_' . $jour_restriction);
 				$erreur = $erreur_periode . _T(
 					'objets_restrictions_periodes:erreur_jours',
@@ -81,7 +88,7 @@ function periodes_verifier_date($champ, $valeur, $options) {
 				return $erreur;
 			}
 			break;
-			
+
 	}
 
 	return $ok;
