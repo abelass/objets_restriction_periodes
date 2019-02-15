@@ -55,7 +55,20 @@ function periodes_verifier_date($champ, $valeur, $options) {
 			$duree = $valeurs_restriction['duree'];
 
 			if ($difference < $duree) {
-				$erreur = $erreur_periode . _T('objets_restrictions_periodes:erreur_duree', ['duree' => $duree]);
+				if ($id_objets_location = _request('id_objets_location') > 0) {
+					$entite_duree = sql_getfetsel(
+						'entite_duree',
+						'spip_objets_locations',
+						'id_objets_location=' . $id_objets_location);
+				}
+				else {
+						$entite_duree = _request('entite_duree');
+				}
+
+				$erreur = $erreur_periode . _T('objets_restrictions_periodes:erreur_duree', [
+					'duree' => $duree,
+					'entite_duree' => $entite_duree,
+				]);
 
 				return $erreur;
 			}

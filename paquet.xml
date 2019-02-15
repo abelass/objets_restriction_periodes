@@ -1,7 +1,7 @@
 <paquet
 	prefix="objets_restrictions_periodes"
 	categorie="divers"
-	version="1.0.1"
+	version="1.0.2"
 	etat="test"
 	compatibilite="[3.0.0;3.2.*]"
 	logo="prive/themes/spip/images/objets_restrictions_periodes-64.png"
@@ -17,6 +17,6 @@
 
 	<necessite nom="saisies" compatibilite="[2.28.0;]" />
 	<necessite nom="periodes" compatibilite="[1.1.1;]" />
-	<necessite nom="locations_objets_restrictions" compatibilite="[1.0.0;]" />
+	<necessite nom="locations_objets_restrictions" compatibilite="[1.1.1;]" />
 	<necessite nom="dates_outils" compatibilite="[1.0.9;]" />
 </paquet>
