@@ -28,6 +28,15 @@ function objets_restrictions_periodes_objets_location_verifier_dates($flux){
 	return $flux;
 }
 
+/**
+ * Permet de compléter ou modifier le résultat de la compilation d’un squelette donné.
+ *
+ * @pipeline recuperer_fond
+ * @param array $flux
+ *  Données du pipeline
+ * @return array
+ *   Données du pipeline
+ */
 function objets_restrictions_periodes_recuperer_fond($flux){
 	if ($flux['args']['fond'] == 'formulaires/inc-editer_objets_location_dates'){
 
@@ -55,4 +64,3 @@ function objets_restrictions_periodes_recuperer_fond($flux){
 	}
 	return $flux;
 }
-
