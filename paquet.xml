@@ -20,5 +20,7 @@
 	<necessite nom="locations_objets_restrictions" compatibilite="[1.2.0;]" />
 	<necessite nom="dates_outils" compatibilite="[1.0.9;]" />
 
+
 	<pipeline nom="objets_location_verifier_dates" inclure="objets_restrictions_periodes_pipelines.php" />
+	<pipeline nom="recuperer_fond" inclure="objets_restrictions_periodes_pipelines.php" />
 </paquet>
