@@ -31,6 +31,9 @@ function objets_restrictions_periodes_objets_location_verifier_dates($flux){
 function objets_restrictions_periodes_recuperer_fond($flux){
 	if ($flux['args']['fond'] == 'formulaires/inc-editer_objets_location_dates'){
 
+		// On ajoute un ajax pour la date_fin et recharge avec les erreurs.
+		$flux['data']['texte'] .= recuperer_fond('formulaires/inc-editer_objets_location_dates_script');
+
 		if ($flux['args']['contexte']['recharge_ajax']) {
 			include_spip('inc/objets_location');
 			include_spip('public/assembler');
@@ -44,12 +47,10 @@ function objets_restrictions_periodes_recuperer_fond($flux){
 			// On évite le loop infinie.
 			unset($contexte['recharge_ajax']);
 
-			// On ajoute un ajax pour la date_fin et recharge avec les erreurs.
-			$script = recuperer_fond('formulaires/inc-editer_objets_location_dates_script');
 			$flux['data']['texte'] = recuperer_fond(
 				'formulaires/inc-editer_objets_location_dates',
 				$contexte,
-				['ajax' => 'objets_location_dates']) . $script;
+				['ajax' => 'objets_location_dates']);
 		}
 	}
 	return $flux;
