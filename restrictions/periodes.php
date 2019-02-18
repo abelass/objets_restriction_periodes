@@ -19,6 +19,7 @@ function restrictions_periodes_dist($flux) {
 	$return = [
 		'nom' => _T('periodes:periodes_titre'),
 		'verifier' => [
+			'type' => 'dates',
 			'champs' => ['date_debut', 'date_fin'],
 		],
 		'saisies' => [
@@ -78,6 +79,7 @@ function restrictions_periodes_dist($flux) {
 				]
 			],
 		]
+
 	];
 
 	return $return;
