@@ -51,7 +51,7 @@ function restrictions_periodes_dist($flux) {
 					'afficher_si' => '@type@=="duree"'
 				]
 			],
-			[
+			/*[
 				'saisie' => 'oui_non',
 				'options' => [
 					'nom' => 'duree_minimale',
@@ -59,7 +59,7 @@ function restrictions_periodes_dist($flux) {
 					'defaut' => 'on',
 					'afficher_si' => '@type@=="duree"'
 				]
-			],
+			],*/
 			[
 				'saisie' => 'selection',
 				'options' => [
