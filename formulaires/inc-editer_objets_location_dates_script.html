@@ -10,7 +10,7 @@
 			Object.keys(champs).forEach(function(k, i) {
 				pair = champs[k].split('=');
 				if (typeof pair[1] !== 'undefined' && pair[1].length > 0) {
-					 args[pair[0]] = pair[1].replace(/%2F/g, '/');
+					 args[pair[0]] = pair[1].replace(/%2F/g, '/').replace(/%2C/g, ',');
 				}
 			});
 
